@@ -1,0 +1,18 @@
+{
+  "name": "TypeScript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "cleanup": "del *.js",
+    "compile": "tsc index.ts",
+    "cleanup:and:compile": "npm run cleanup && npm run compile",
+    "execute": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.4.3"
+  }
+}
