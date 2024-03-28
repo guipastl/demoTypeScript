@@ -1,3 +1,7 @@
+import { person, people } from './types'
+
+import introducePerson from './introducePerson'
+
 let myName = 'Guilherme'
 
 // myName = true
@@ -19,18 +23,6 @@ const age: number = 36
 const pronoum: string = 'he'
 const isMarried: boolean = true
 
-type person = {
-    nome: string,
-    age: number,
-    pronoum: string,
-    isMarried?: boolean
-}
-
-function introducePerson(person: person): void {
-    const { nome, age, pronoum, isMarried } = person
-    console.log(`${nome} is ${age} years old and ${pronoum} ${isMarried ? 'is' : 'is not'} married`)
-}
-
 const tom: person = {
     nome: nome,
     age: age,
@@ -48,8 +40,6 @@ const ana = {
 
 introducePerson(ana)
 
-type people = Array<person>
-
 const gregory: person = {
     nome: 'Gregory',
     age: 18,
@@ -57,10 +47,47 @@ const gregory: person = {
     isMarried: false
 }
 
-const people: people = [
+const pessoas: people = [
     tom,
     ana,
     gregory
 ]
 
-introducePerson(people[2])
+introducePerson(pessoas[2])
+
+enum dbActions {
+    create,
+    read,
+    update,
+    delete
+}
+
+function runDBAction(action: dbActions) {
+    switch(action) {
+        case 0:
+            console.log('Creating...')
+            break
+        case 1:
+            console.log('Reading...')
+            break
+        case 2:
+            console.log('Updating...')
+            break
+        case 3:
+            console.log('Deleting...')
+            break
+        default:
+            console.log('Ooops, invalid database action!')
+            break
+    }
+}
+
+runDBAction(0)
+runDBAction(1)
+runDBAction(2)
+runDBAction(3)
+runDBAction(5)
+
+console.log('')
+
+runDBAction(dbActions.update)
