@@ -91,3 +91,40 @@ runDBAction(5)
 console.log('')
 
 runDBAction(dbActions.update)
+
+enum requestAction {
+    get = 1,
+    post,
+    patch,
+    put,
+    delete
+}
+
+function runRequest(verb: requestAction) {
+    switch(verb) {
+        case 1:
+            console.log('Getting...')
+            break
+        case 2:
+            console.log('Posting...')
+            break
+        case 3:
+            console.log('Patching...')
+            break
+        case 4:
+            console.log('Putting...')
+            break
+        case 5:
+            console.log('Deleting...')
+            break
+        default:
+            console.log('Ooops, invalid request action!')
+            break
+    }
+}
+
+console.log('')
+
+runRequest(1)
+runRequest(5)
+runRequest(0)
